@@ -1,11 +1,16 @@
-import { CreateInvoice } from './Buttons';
-import { InvoicesTable } from './InvoicesTable';
-import { InvoicesTableSkeleton } from '@/app/ui/skeletons';
-import { Pagination } from './Pagination';
-import { Search } from './Search';
+import { CreateInvoice } from './_Buttons';
+import { InvoicesTable } from './_InvoicesTable';
+import { InvoicesTableSkeleton } from '../_Skeletons';
+import { Metadata } from 'next';
+import { Pagination } from './_Pagination';
+import { Search } from '../_Search';
 import { Suspense } from 'react';
-import { fetchInvoicesPages } from '../../lib/data';
-import { lusitana } from '@/app/ui/fonts';
+import { fetchInvoicesPages } from '../=data';
+import { lusitana } from '../../=fonts';
+
+export const metadata: Metadata = {
+  title: 'Invoices',
+};
 
 type InvoicesPageProps = {
   searchParams?: {

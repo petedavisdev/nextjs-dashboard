@@ -1,7 +1,7 @@
 import Credentials from 'next-auth/providers/credentials';
 import NextAuth from 'next-auth';
-import type { User } from '@/app/lib/definitions';
-import { authConfig } from './auth.config';
+import type { User } from './=definitions';
+import { authConfig } from '../auth.config';
 import bcrypt from 'bcrypt';
 import { sql } from '@vercel/postgres';
 import { z } from 'zod';

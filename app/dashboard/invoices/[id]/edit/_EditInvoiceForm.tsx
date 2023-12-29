@@ -6,11 +6,11 @@ import {
   CurrencyDollarIcon,
   UserCircleIcon,
 } from '@heroicons/react/24/outline';
-import { CustomerField, InvoiceForm } from '@/app/lib/definitions';
+import { CustomerField, InvoiceForm } from '../../../../=definitions';
 
-import { Button } from '@/app/ui/button';
+import { Button } from '../../../../_Button';
 import Link from 'next/link';
-import { updateInvoice } from './updateInvoice';
+import { updateInvoice } from './=updateInvoice';
 
 export function EditInvoiceForm({
   invoice,

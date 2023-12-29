@@ -7,9 +7,9 @@ import {
 } from '@heroicons/react/24/outline';
 
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
-import { Button } from '../ui/button';
-import { authenticate } from './authenticate';
-import { lusitana } from '@/app/ui/fonts';
+import { Button } from '../_Button';
+import { authenticate } from './=authenticate';
+import { lusitana } from '../=fonts';
 import { useFormState } from 'react-dom';
 
 export default function LoginForm() {

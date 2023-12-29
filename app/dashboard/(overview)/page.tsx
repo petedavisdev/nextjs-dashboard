@@ -1,20 +1,13 @@
-import {
-  LatestInvoicesSkeleton,
-  RevenueChartSkeleton,
-} from '../../ui/skeletons';
-import {
-  fetchCardData,
-  fetchFilteredInvoices,
-  fetchLatestInvoices,
-} from '@/app/lib/data';
+import { LatestInvoicesSkeleton, RevenueChartSkeleton } from '../_Skeletons';
+import { fetchCardData } from '../=data';
 
-import { Card } from '@/app/dashboard/ui/cards';
-import LatestInvoices from '@/app/dashboard/ui/latest-invoices';
-import RevenueChart from '@/app/dashboard/ui/revenue-chart';
+import { Card } from './_Cards';
+import LatestInvoices from './_LatestInvoices';
+import RevenueChart from './_RevenueChart';
 import { Suspense } from 'react';
-import { lusitana } from '@/app/ui/fonts';
+import { lusitana } from '../../=fonts';
 
-export default async function Page() {
+export default async function DashboardPage() {
   const {
     numberOfInvoices,
     numberOfCustomers,

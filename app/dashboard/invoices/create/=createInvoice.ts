@@ -1,6 +1,6 @@
 'use server';
 
-import { InvoiceSchema } from '../invoice.schema';
+import { InvoiceSchema } from '../=invoiceSchema';
 import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
 import { sql } from '@vercel/postgres';

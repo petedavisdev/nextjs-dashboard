@@ -1,9 +1,8 @@
 import { ArrowPathIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
-import { LatestInvoice } from '@/app/lib/definitions';
 import clsx from 'clsx';
-import { fetchLatestInvoices } from '@/app/lib/data';
-import { lusitana } from '@/app/ui/fonts';
+import { fetchLatestInvoices } from '../=data';
+import { lusitana } from '../../=fonts';
 
 export default async function LatestInvoices() {
   // Remove props

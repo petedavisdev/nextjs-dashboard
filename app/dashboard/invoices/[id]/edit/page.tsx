@@ -1,7 +1,7 @@
-import { fetchCustomers, fetchInvoiceById } from '../../../../lib/data';
+import { fetchCustomers, fetchInvoiceById } from '../../../=data';
 
-import { Breadcrumbs } from '../../Breadcrumb';
-import { EditInvoiceForm } from './EditInvoiceForm';
+import { Breadcrumbs } from '../../_Breadcrumb';
+import { EditInvoiceForm } from './_EditInvoiceForm';
 import { notFound } from 'next/navigation';
 
 type EditInvoicePageProps = {
