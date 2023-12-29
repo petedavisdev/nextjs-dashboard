@@ -1,6 +1,6 @@
 'use server';
 
-import { InvoiceSchema } from '../../invoice.z';
+import { InvoiceSchema } from '../../invoice.schema';
 import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
 import { sql } from '@vercel/postgres';
@@ -16,11 +16,17 @@ export async function updateInvoice(id: string, formData: FormData) {
 
   const amountInCents = amount * 100;
 
-  await sql`
-    UPDATE invoices
-    SET customer_id = ${customerId}, amount = ${amountInCents}, status = ${status}
-    WHERE id = ${id}
-  `;
+  try {
+    await sql`
+      UPDATE invoices
+      SET customer_id = ${customerId}, amount = ${amountInCents}, status = ${status}
+      WHERE id = ${id}
+    `;
+  } catch (error) {
+    return {
+      message: 'Database Error: Failed to Update Invoice.',
+    };
+  }
 
   revalidatePath('/dashboard/invoices');
   redirect('/dashboard/invoices');

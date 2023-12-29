@@ -2,6 +2,7 @@ import { fetchCustomers, fetchInvoiceById } from '../../../../lib/data';
 
 import { Breadcrumbs } from '../../Breadcrumb';
 import { EditInvoiceForm } from './EditInvoiceForm';
+import { notFound } from 'next/navigation';
 
 type EditInvoicePageProps = {
   params: { id: string };
@@ -12,6 +13,10 @@ export default async function EditInvoicePage(props: EditInvoicePageProps) {
     fetchInvoiceById(props.params.id),
     fetchCustomers(),
   ]);
+
+  if (!invoice) {
+    notFound();
+  }
 
   return (
     <main>

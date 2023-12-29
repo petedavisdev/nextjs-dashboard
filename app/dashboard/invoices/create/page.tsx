@@ -1,5 +1,5 @@
 import { Breadcrumbs } from '../Breadcrumb';
-import { Form } from './Form';
+import { CreateForm } from './CreateForm';
 import { fetchCustomers } from '@/app/lib/data';
 
 export default async function CreateInvoicePage() {
@@ -17,7 +17,7 @@ export default async function CreateInvoicePage() {
           },
         ]}
       />
-      <Form customers={customers} />
+      <CreateForm customers={customers} />
     </main>
   );
 }
